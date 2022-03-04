@@ -7,7 +7,9 @@ _createNotes();
 
 export const noteService = {
     query,
-    remove
+    remove,
+    save,
+    getEmptyNote
 
 
 }
@@ -123,3 +125,30 @@ function _createNotes() {
 function remove(noteId) {
     return storageService.remove(NOTES_KEY, noteId);
 }
+
+function getEmptyNote() {
+    return {
+      id: makeId(),
+      type: 'noteTxt',
+      title: '',
+      isPinned: false,
+      lastEdit: Date.now(),
+      info: {
+        txt: '',
+      },
+      bgColor: '#fff475',
+    };
+  }
+
+  function makeId(length = 8) {
+    var txt = '';
+    var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    for (var i = 0; i < length; i++) {
+        txt += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return txt;
+}
+
+function save(note) {
+    return storageService.post(NOTES_KEY, note);
+  }
