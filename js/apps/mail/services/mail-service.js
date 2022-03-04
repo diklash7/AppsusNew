@@ -4,11 +4,6 @@ import { storageService } from '../../../services/async-storage-service.js'
 const STORAGE_KEY = 'mails';
 _createMails();
 
-const loggedinUser = {
-    mail: 'user@appsus.com',
-    fullname: 'Mahatma Appsus'
-}
-
 export const mailService = {
     query,
     remove,

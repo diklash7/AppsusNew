@@ -43,7 +43,8 @@ export default {
     methods: {
         send() {
             if (!this.mailToSend.to) return;
-            if (this.mailToSend.to !== 'user@appsus.com') this.mailToSend.isInbox = true
+            if (this.mailToSend.to === 'itsar' || this.mailToSend.to === 'dikla') this.mailToSend.isInbox = true
+            else this.mailToSend.isInbox = false
             mailService.save(this.mailToSend)
                 .then(mail => {
                     eventBus.emit('show-msg', { txt: 'Saved succesfully', type: 'success' })

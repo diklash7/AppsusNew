@@ -19,6 +19,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     height: 1rem;
+    margin-right: 150px;
 }
 
 .mail-preview .subject {

@@ -12,8 +12,7 @@ export default {
                 <p><{{mail.to}}></p>
          </div>
               <div class="body-details" >{{mail.body}}</div>
-                <div class="btn-delete">
-                    <button>🗑️</button>
+                   <router-link class="btn-delete" :to="'/mail'">x</router-link>
               </div>
             </section>
         </section>
