@@ -1,0 +1,41 @@
+/* PARTS MAIL */
+
+@import '../css/apps/mail/parts/base.css';
+@import '../css/apps/mail/parts/helpers.css';
+
+/* CMPS MAIL */
+
+@import '../css/apps/mail/cmps/mail-list.css';
+@import '../css/apps/mail/cmps/mail-filter.css';
+@import '../css/apps/mail/cmps/mail-preview.css';
+@import '../css/apps/mail/cmps/mail-details.css';
+@import '../css/apps/mail/cmps/mail-app.css';
+@import '../css/apps/mail/cmps/mail-form.css';
+
+/* CMPS NOTES*/
+
+@import '../css/apps/keep/note-preview.css';
+
+/* APP HEADER AND FOOTER */
+/* .body{
+    height:400vh;
+} */
+.app-header {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.app-header {
+    background-color: rgba(235, 145, 27, 0.856);
+    height: 10vh;
+}
+
+
+.app-footer {
+    background-color: rgba(235, 145, 27, 0.856);
+    height: 7vh;
+    text-align: center;
+}

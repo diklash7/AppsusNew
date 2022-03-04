@@ -1,0 +1,44 @@
+.mail-details {
+    background-color: rgb(241, 227, 208);
+    padding: 20px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mail-details .header-subject {
+    font-size: 1.5rem;
+}
+
+.mail-details h2 {
+    line-height: 50px;
+    font-size: 1.2rem;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.mail-details h2,
+p {
+    display: inline;
+}
+
+.mail-details .header-details p {
+    color: gray;
+}
+
+.mail-details .body-details {
+    padding: 0px 20px;
+    white-space: pre-line;
+    text-indent: 0;
+}
+
+.mail-details button {
+    position: absolute;
+    right: 28%;
+    top: 40px;
+    border: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}

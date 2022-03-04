@@ -1,0 +1,54 @@
+.mail-preview {
+    gap: 30px;
+    padding: 5px;
+    height: 30px;
+}
+
+.open-details {
+    display: flex;
+    gap: 30px;
+    color: black;
+    text-decoration: none;
+}
+
+.mail-preview .fullname {
+    font-weight: bold;
+}
+
+.mail-preview .content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 1rem;
+}
+
+.mail-preview .subject {
+    white-space: nowrap;
+    margin-left: 30px;
+    font-weight: bold;
+}
+
+.mail-preview .body {
+    color: gray;
+    margin-left: 30px;
+}
+
+.mail-preview .sent-at {
+    cursor: pointer;
+    padding-right: 10px;
+    position: absolute;
+    right: 100px;
+    font-weight: bold;
+}
+
+.mail-preview .sent-at:hover {
+    display: none;
+}
+
+.actions {
+    position: absolute;
+    right: 30px;
+}
+
+.actions button {
+    cursor: pointer;
+}
