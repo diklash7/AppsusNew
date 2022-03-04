@@ -15,7 +15,8 @@ export const mailService = {
     save,
     get,
     getEmptyMail,
-    saveMailSent
+    saveMailSent,
+    createDraft
 };
 
 function query() {
@@ -35,25 +36,33 @@ function save(mail) {
     else return storageService.post(STORAGE_KEY, mail);
 }
 
-function saveMailSent(mailId, sent) {
-    return get(mailId)
-        .then(mail => {
-            if (!mail.sents) mail.sents = []
-            mail.sents.push(sent)
-            save(mail)
-            return mail
-        })
+function saveMailSent(mailId) {
+    const mail = _createMail(mailId.subject, mailId.body, Date.now(), mailId.to, isInbox, isDraft)
+    return storageService.post(STORAGE_KEY, mail);
 }
 
-function getEmptyMail() {
+function _createMail(subject, body, sentAt, to, isRead, isInbox, isDraft) {
+    const mail = getEmptyMail(subject, body, sentAt, to, isRead, isInbox, isDraft)
+    mail.id = utilService.makeId()
+    return mail;
+}
+
+function createDraft(mailId) {
+    const draft = _createMail(mailId.subject, mailId.body, Date.now(), mailId.to, false, false, true)
+    return storageService.post(STORAGE_KEY, draft);
+}
+
+function getEmptyMail(isRead = false, isInbox = true, isStared = false, isDraft = false) {
     return {
         id: '',
         subject: '',
         body: '',
-        isRead: '',
         sentAt: '',
-        to: ''
-
+        to: '',
+        isRead,
+        isInbox,
+        isStared,
+        isDraft,
     };
 }
 
@@ -67,6 +76,7 @@ function _createMails() {
                 body: 'Lorem ipsum dolor,  id vel sit quidem illum ab minus labore consequuntur, atque voluptatum suscipit repudiandae, quia hic ullam quisquam ipsam voluptatibus',
                 isRead: false,
                 sentAt: '',
+                isInbox: false,
                 to: 'momo@momo.com'
             },
             {
@@ -76,6 +86,7 @@ function _createMails() {
                 body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam illo inventore possimus mollitia praesentium quaerat, similique magni accusantium qui repellat culpa exercitationem ipsum nobis repellendus. Porro dolore natus fugit esse?',
                 isRead: false,
                 sentAt: '',
+                isInbox: false,
                 to: 'popo@popo.com'
             },
             {
@@ -84,6 +95,7 @@ function _createMails() {
                 subject: 'Good bye!',
                 body: 'Lorem ipsum dolor sit amet,  Porro dolore natus fugit esse?',
                 isRead: false,
+                isInbox: true,
                 sentAt: '',
                 to: 'lolo@lolo.com'
             },
@@ -94,6 +106,7 @@ function _createMails() {
                 body: 'Lorem ipsum dolor sit amet,  Porro dolore natus fugit esse?',
                 isRead: false,
                 sentAt: '',
+                isInbox: true,
                 to: 'lolo@lolo.com'
             },
             {
@@ -103,6 +116,7 @@ function _createMails() {
                 body: 'Lorem ipsum dolor sit amet,  Porro dolore natus fugit esse?',
                 isRead: false,
                 sentAt: '',
+                isInbox: false,
                 to: 'lolo@lolo.com'
             }
 

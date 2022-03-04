@@ -14,7 +14,7 @@ export default {
                    </textarea>
                 <div class="btns-form" >
                     <button class="btn-send">Send</button>
-                    <router-link class="btn-remove" :to="'/mail'">🗑️</router-link>
+                    <router-link class="btn-remove" :to="'/mail'">x</router-link>
                 </div>
              </form>
            </section>
@@ -22,13 +22,18 @@ export default {
     `,
     data() {
         return {
+            mailToSend: {
+                to: '',
+                subject: '',
+                body: '',
+                isInbox: false,
 
+            }
         };
     },
     created() {
         const id = this.$route.params.mailId;
         if (id) {
-            console.log(id);
             mailService.get(id)
                 .then(mail => this.mailToSend = mail);
         } else {
@@ -38,7 +43,7 @@ export default {
     methods: {
         send() {
             if (!this.mailToSend.to) return;
-            // if (this.mailToSend.to === 'user@appsus.com') {
+            if (this.mailToSend.to !== 'user@appsus.com') this.mailToSend.isInbox = true
             mailService.save(this.mailToSend)
                 .then(mail => {
                     eventBus.emit('show-msg', { txt: 'Saved succesfully', type: 'success' })
