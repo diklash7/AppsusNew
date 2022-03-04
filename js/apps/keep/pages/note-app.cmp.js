@@ -1,5 +1,6 @@
 import { noteService } from "../services/note-service.js";
 import noteList from "../cmps/note-list.cmp.js";
+import noteAdd from "../cmps/note-add.cmp.js";
 import noteFilter from "../cmps/note-filter.cmp.js";
 
 export default {
@@ -7,14 +8,16 @@ export default {
         <section class="note-app app-main">
             <!-- <h3>noteapp</h3> -->
             <note-filter @filtered="setFilter" />
-            <router-link to="/note/edit">Add a new note</router-link>
+            <note-add/>
+            <!-- <router-link to="/note/edit">Add a new note</router-link> -->
             <note-list :notes="notesForDisplay" @remove="removeNote" />
-            <note-edit/>
+            <!-- <note-edit/> -->
         </section>
     `,
     components: {
         noteList,
-        noteFilter
+        noteFilter,
+        noteAdd
     },
     data() {
         return {
