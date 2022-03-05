@@ -5,7 +5,7 @@ import noteFilter from "../cmps/note-filter.cmp.js";
 
 export default {
     template: `
-        <section class="note-app ">
+        <section class="note-app">
             <!-- <h3>noteapp</h3> -->
             <note-filter @filtered="setFilter"  />
             <note-add/>
