@@ -7,7 +7,7 @@ export default {
     template: `
         <section class="note-app app-main">
             <!-- <h3>noteapp</h3> -->
-            <note-filter @filtered="setFilter" />
+            <note-filter @filtered="setFilter"  />
             <note-add/>
             <!-- <router-link to="/note/edit">Add a new note</router-link> -->
             <note-list :notes="notesForDisplay" @remove="removeNote" />
