@@ -6,11 +6,11 @@ import navBar from "../cmps/nav-bar.cmp.js";
 
 export default {
     template: `
-        <section class="mail-app">
+        <section class="mail-app app-main">
         <nav-bar @selected="setFilterSent" :unread="unread"></nav-bar>
                <div class="mail-display">
                    <mail-filter @filtered="setFilter"/>
-                   <mail-list :mails="mailsForDisplay" />
+                   <mail-list :mails="mailsForDisplay" @stared="setFilterByStar" />
                 </div>
         </section>
     `,
@@ -25,14 +25,8 @@ export default {
             mails: null,
             unread: null,
             filterBy: '',
-            filterBySent: ''
-                // myFilterBy: {
-                //     status: 'inbox',
-                //     txt: '',
-                //     isRead: false,
-                //     isStared: false,
-                //     mail: '',
-                // }
+            filterBySent: '',
+            filterByStar: '',
         };
     },
     created() {
@@ -47,6 +41,10 @@ export default {
             this.filterBySent = select
             console.log(this.filterBySent);
         },
+        setFilterByStar(id) {
+            this.filterByStar = id
+            console.log(id);
+        }
     },
     computed: {
         mailsForDisplay() {
@@ -58,7 +56,7 @@ export default {
             } else {
                 if (this.filterBySent === 'inbox') return this.mails.filter(mail => mail.isInbox)
                 else if (this.filterBySent === 'sent') return this.mails.filter(mail => !mail.isInbox)
-                    // else if (this.filterBySent === 'stared') return this.mails.filter(mail => mail.isStarred)
+                else if (this.filterByStar === 'stared') return this.mails.filter(mail => mail.isStarred)
                     // else if (this.filterBySent === 'drafts') return this.mails.filter(mail => mail.isDraft)
             }
         }

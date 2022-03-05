@@ -1,47 +1,57 @@
-    .mail-form {
-        margin-left: 30%;
-        margin-bottom: 50px;
-    }
-    
-    .mail-form h4 {
-        padding: 10px;
-        background-color: rgb(53, 50, 50);
-        width: 396px;
-        color: white;
-    }
-    
-    .form-container {
-        margin-top: -22px;
-        width: 400px;
-    }
-    
-    .form-container input {
-        height: 30px;
-    }
-    
-    .form-container input,
-    textarea {
-        display: flex;
-        flex-direction: column;
-        width: 99%;
-    }
-    
-    .mail-form .btn-send {
-        padding: 5px;
-        font-size: 15px;
-        background-color: rgba(7, 80, 216, 0.801);
-        color: white;
-    }
-    
-    .btn-remove {
-        text-decoration: none;
-        /* padding: 10px; */
-        /* line-height: 40px; */
-    }
-    
-    .btns-form {
-        transform: translate(0, -100%);
-        display: flex;
-        justify-content: space-between;
-        padding: 8px;
-    }
+        .mail-form {
+            margin-left: 30%;
+            margin-bottom: 50px;
+            margin-top: 30px;
+        }
+        
+        .mail-form .note {
+            color: blue;
+        }
+        
+        .mail-form h4 {
+            padding: 10px;
+            background-color: rgb(53, 50, 50);
+            width: 396px;
+            color: white;
+        }
+        
+        .form-container {
+            margin-top: -22px;
+            width: 400px;
+        }
+        
+        .form-container input {
+            height: 30px;
+        }
+        
+        .form-container input,
+        textarea {
+            display: flex;
+            flex-direction: column;
+            width: 99%;
+        }
+        
+        .mail-form .btn-send {
+            /* padding: 5px; */
+            font-size: 15px;
+            width: 80px;
+            height: 35px;
+            background-color: rgba(7, 80, 216, 0.801);
+            color: white;
+            display: inline;
+        }
+        
+        .btn-exit {
+            text-decoration: none;
+            padding: 3px;
+            font-size: 25px;
+            color: beige;
+            margin-left: 260px;
+        }
+        
+        .btns-form {
+            transform: translate(0, -100%);
+            display: flex;
+            justify-content: space-between;
+            padding: 8px;
+        }

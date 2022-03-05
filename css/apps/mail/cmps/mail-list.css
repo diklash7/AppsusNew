@@ -1,3 +1,85 @@
-.mail-list ul {
+.mail-menu ul {
     list-style: none;
+}
+
+.btn-compos {
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    background: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 0;
+    color: #5f6368;
+    cursor: pointer;
+    margin: 20px;
+    font-weight: 500;
+    transition: all 0.4s;
+    text-decoration: none;
+    position: relative;
+}
+
+.btn-compos .plus {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn-compos:hover {
+    color: #d93025;
+}
+
+.btn-compos span {
+    font-size: 1.5rem;
+}
+
+.inbox {
+    text-decoration: none;
+    color: black;
+}
+
+.started {
+    text-decoration: none;
+    color: black;
+}
+
+.sent-mail {
+    text-decoration: none;
+    color: black;
+}
+
+.drafts {
+    text-decoration: none;
+    color: black;
+}
+
+.mail-app ul {
+    list-style: none;
+}
+
+
+/* .mail-app .mail-display {
+    margin-left: 10%;
+} */
+
+.mail-app .btn-menu li {
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+.mail-app .btn-menu li:hover {
+    background-color: rgb(236, 206, 206);
+    color: #d93025;
+    font-weight: bold;
+}
+
+.progress {
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 30px;
+    background-color: #7592b3;
+    height: 20px;
+    margin-left: 120px;
+    text-align: center;
+    font-weight: bold;
 }

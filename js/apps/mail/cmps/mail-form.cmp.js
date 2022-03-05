@@ -4,7 +4,10 @@ import { eventBus } from '../../../services/eventBus-service.js'
 export default {
     template: `
       <section v-if="mailToSend" class="mail-form">
-         <h4>New message</h4>
+          <span class="note">Note: write itsar or dikla to send us :) </span>
+         <h4>New message
+         <router-link class="btn-exit" :to="'/mail'">x</router-link>
+         </h4>
            <section class="form-container">
              <form @submit.prevent="send">
                    <input type="text" v-model="mailToSend.to" placeholder="To:">
@@ -13,11 +16,12 @@ export default {
                    <textarea  v-model="mailToSend.body" cols="30" rows="20">
                    </textarea>
                 <div class="btns-form" >
-                    <button class="btn-send">Send</button>
-                    <router-link class="btn-remove" :to="'/mail'">x</router-link>
+                    <button class="btn-send">Send <span>🔽</span> </button>
+                   
                 </div>
+                
              </form>
-           </section>
+            </section>
      </section>
     `,
     data() {

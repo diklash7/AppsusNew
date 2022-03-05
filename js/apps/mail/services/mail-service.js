@@ -32,12 +32,12 @@ function save(mail) {
 }
 
 function saveMailSent(mailId) {
-    const mail = _createMail(mailId.subject, mailId.body, Date.now(), mailId.to, isInbox, isDraft)
+    const mail = _createMail(mailId.subject, mailId.body, Date.now(), mailId.to, isInbox, isDraft, isStared)
     return storageService.post(STORAGE_KEY, mail);
 }
 
-function _createMail(subject, body, sentAt, to, isRead, isInbox, isDraft) {
-    const mail = getEmptyMail(subject, body, sentAt, to, isRead, isInbox, isDraft)
+function _createMail(subject, body, sentAt, to, isRead, isInbox, isDraft, isStared) {
+    const mail = getEmptyMail(subject, body, sentAt, to, isRead, isInbox, isDraft, isStared)
     mail.id = utilService.makeId()
     return mail;
 }
@@ -69,9 +69,10 @@ function _createMails() {
                 id: 'e101',
                 subject: 'Miss you!',
                 body: 'Lorem ipsum dolor,  id vel sit quidem illum ab minus labore consequuntur, atque voluptatum suscipit repudiandae, quia hic ullam quisquam ipsam voluptatibus',
-                isRead: false,
+                isRead: true,
                 sentAt: '',
                 isInbox: false,
+                isStared: false,
                 to: 'momo@momo.com'
             },
             {
@@ -82,6 +83,7 @@ function _createMails() {
                 isRead: false,
                 sentAt: '',
                 isInbox: false,
+                isStared: false,
                 to: 'popo@popo.com'
             },
             {
@@ -90,8 +92,9 @@ function _createMails() {
                 subject: 'Good bye!',
                 body: 'Lorem ipsum dolor sit amet,  Porro dolore natus fugit esse?',
                 isRead: false,
-                isInbox: true,
                 sentAt: '',
+                isInbox: true,
+                isStared: false,
                 to: 'lolo@lolo.com'
             },
             {
@@ -102,6 +105,7 @@ function _createMails() {
                 isRead: false,
                 sentAt: '',
                 isInbox: true,
+                isStared: false,
                 to: 'lolo@lolo.com'
             },
             {
@@ -112,6 +116,18 @@ function _createMails() {
                 isRead: false,
                 sentAt: '',
                 isInbox: false,
+                isStared: true,
+                to: 'lolo@lolo.com'
+            },
+            {
+                fullname: 'David',
+                id: 'e106',
+                subject: 'Shabat shalom',
+                body: 'Lorem ipsum dolor sit amet,  Porro dolore natus fugit e Lorem ipsum dolor sit amet,  Porro dolore natus fugit e Lorem ipsum dolor sit amet,  Porro dolore natus fugit esse?',
+                isRead: false,
+                sentAt: '',
+                isInbox: false,
+                isStared: true,
                 to: 'lolo@lolo.com'
             }
 

@@ -53,3 +53,15 @@
 .actions button {
     cursor: pointer;
 }
+
+.yellow-color {
+    color: rgb(255, 187, 0);
+}
+
+.balck-color {
+    color: black;
+}
+
+.fa-trash-can {
+    color: black;
+}

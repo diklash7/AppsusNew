@@ -8,7 +8,7 @@ export default {
             <section class="mail-list">
                 <ul>
                   <li v-for="mail in mails" :key="mail.id" class="mail-preview-container" >
-                    <mail-preview :mail="mail" @remove="removeMail"/>  
+                    <mail-preview :mail="mail" @stared="setStared" @remove="removeMail" />  
                  </li>
                 </ul>
             </section>
@@ -31,7 +31,11 @@ export default {
         },
         select(mail) {
             this.$emit('selected', mail);
+        },
+        setStared(mail) {
+            this.$emit('stared', mail)
         }
     },
+
 
 }
