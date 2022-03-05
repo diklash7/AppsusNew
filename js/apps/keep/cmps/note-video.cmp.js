@@ -1,7 +1,7 @@
 import { noteService } from "../services/note-service.js";
 export default {
     props: ['note'],
-        template: `
+    template: `
             <section class="note-video">
     
                     <h3>{{note.info.title}}</h3>

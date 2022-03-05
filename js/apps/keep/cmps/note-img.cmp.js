@@ -31,7 +31,7 @@ export default {
         this.currNote = this.note;
         console.log('this.currNote:', this.currNote);
     },
-    methods:{
+    methods: {
 
         duplicateNote() {
             noteService.save(this.currNote);

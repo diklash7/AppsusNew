@@ -11,7 +11,7 @@
     margin: 10px;
     width: 300px;
     /* height: 150px; */
-    background-color: rgba(243, 182, 101, 0.288);;
+    background-color: rgba(243, 182, 101, 0.288);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -32,8 +32,9 @@
 
 .note-filter input {
     height: 30px;
-    margin-left: 30%;
+    margin-left: 33%;
     margin-top: 20px;
+    width: 250px;
 }
 
 .note-list .btn-save {
@@ -47,16 +48,15 @@
     padding: 3px;
 }
 
-.imgBtn{
-    width:20px;
-    
+.imgBtn {
+    width: 20px;
+    display: flex;
 }
-/* .btn-remove */
-/* .note-img{
-    width:100px;
-    height: 100px;; */
-/* } */
 
-.fa{
-    width:20px;
+.fa {
+    width: 20px;
+}
+
+.note-add img {
+    margin: 4px;
 }

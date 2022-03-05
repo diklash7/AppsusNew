@@ -6,20 +6,10 @@ export default {
     <section class="note-add">
         <input type="text" v-model="title" class="note-input" :placeholder="placeholder" >
             <i><img @click="setType('note-img')"  class="fa fa-image" src="../../../../../img/image.png"></i>
-        </div>
-        <div @click="setType('note-txt')" >
-            <img  class="fa fa-image" src="../../../../../img/text.png">
-        </div>
-        <div @click="setType('note-video')" >
-            <i><img  class="fa fa-image" src="../../../../../img/video-camera.png"></i>
-        </div>
-        <div @click="setType('note-list')" >
-            <i><img  class="fa fa-image" src="../../../../../img/menu.png"></i>
-        </div>
-        </div>
-        <div @click="onSaveNote">
-             <i> <img  class="fa fa-image" src="../../../../../img/menu.png"></i>
-        </div>
+            <img  @click="setType('note-txt')" class="fa fa-image" src="../../../../../img/text.png">
+            <i><img   @click="setType('note-video')"   class="fa fa-image" src="../../../../../img/video-camera.png"></i>
+            <i><img @click="setType('note-list')"   class="fa fa-image" src="../../../../../img/menu.png"></i>
+            <i> <img  @click="onSaveNote" class="fa fa-image" src="../../../../../img/menu.png"></i>
     </section>
     `,
     data() {
@@ -44,8 +34,7 @@ export default {
                 });
                 this.note.info.todos = todos;
             }
-            noteService.save(this.note).then(() => {
-            });
+            noteService.save(this.note).then(() => {});
         },
         setType(type) {
             this.note.type = type;
