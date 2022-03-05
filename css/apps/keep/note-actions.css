@@ -1,0 +1,35 @@
+.note-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  .note-actions > * {
+    cursor: pointer;
+  }
+  /* .color-palette {
+  } */
+  
+  .note-actions img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .done {
+    text-decoration: line-through;
+  }
+  
+  .note-actions-details {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+  }
+  
+  i {
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  i:hover {
+    color: rgba(0, 0, 0, 0.527);
+    border-radius: 50%;
+  }
+  

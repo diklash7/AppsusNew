@@ -8,7 +8,9 @@ export default {
         <section class="note-app">
             <note-filter @filtered="setFilter"  />
             <note-add/>
+            <!-- <router-link to="/note/edit">Add a new note</router-link> -->
             <note-list :notes="notesForDisplay" @remove="removeNote" />
+            <!-- <note-edit/> -->
         </section>
     `,
     components: {
@@ -19,6 +21,7 @@ export default {
     data() {
         return {
             notes: null,
+            // selectedBook: null,
             filterBy: null
         };
 
