@@ -14,6 +14,8 @@ export default {
                 <li class="note-style"  v-for="note in notes"> 
                     <component :is="note.type" :note="note"> </component>
                     <img src="../../../../img/bin.png" class="imgBtn" @click="remove(note.id)"> 
+                    <!-- <img class="imgBtn" src="../../../../img/copying.png" @click="duplicateNote()"> -->
+
                  </li>
             </ul>
         </section>
@@ -42,6 +44,9 @@ export default {
         remove(id) {
             console.log(id)
             this.$emit('remove', id);
+        },
+        duplicateNote() {
+            noteService.save(this.currNote);
         },
 
         duplicateNote(id) {
