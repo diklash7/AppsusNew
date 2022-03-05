@@ -6,12 +6,9 @@ import noteFilter from "../cmps/note-filter.cmp.js";
 export default {
     template: `
         <section class="note-app app-main">
-            <!-- <h3>noteapp</h3> -->
             <note-filter @filtered="setFilter"  />
             <note-add/>
-            <!-- <router-link to="/note/edit">Add a new note</router-link> -->
             <note-list :notes="notesForDisplay" @remove="removeNote" />
-            <!-- <note-edit/> -->
         </section>
     `,
     components: {
@@ -22,7 +19,6 @@ export default {
     data() {
         return {
             notes: null,
-            // selectedBook: null,
             filterBy: null
         };
 

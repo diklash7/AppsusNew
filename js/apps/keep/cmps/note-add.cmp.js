@@ -11,7 +11,8 @@ export default {
             <img  class="fa fa-image" src="../../../../../img/text.png">
         </div>
         <div @click="setType('note-video')" >
-            <i><img  class="fa fa-image" src="../../../../../img/video-camera.png"></i>
+        <i class="fa-brands fa-youtube"></i>
+            <!-- <i><img  class="fa fa-image" src="../../../../../img/video-camera.png"></i> -->
         </div>
         <div @click="setType('note-list')" >
             <i><img  class="fa fa-image" src="../../../../../img/menu.png"></i>
