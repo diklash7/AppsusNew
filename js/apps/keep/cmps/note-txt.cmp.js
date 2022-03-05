@@ -1,28 +1,36 @@
-export default{
-template:`
+import { noteService } from "../services/note-service.js";
+export default {
+    props: ['note'],
+    template: `
 <section>
 <label>
 
-{{info.txt}}
+{{note.info.txt}}
+
 
 <!-- <input type="text" v-model="val" @change="reportVal"/> -->
+<img class="imgBtn" src="../../../../img/copying.png" @click="duplicateNote()">
 
 </label>
 </section>
 
 `,
-props:['info'],
-data(){
-    return{
-        val:'',
-    }
+    data() {
+        return {
+            
+        }
 
-},
-methods:{
-    reportVal(){
-        this.$emit('setVal', this.val)
+    },
+    created() {
+        this.currNote = this.note;
+        console.log('this.currNote:', this.currNote);
+    },
+    methods: {
+
+        duplicateNote() {
+            noteService.save(this.currNote);
+        },
     }
-}
 
 
 
