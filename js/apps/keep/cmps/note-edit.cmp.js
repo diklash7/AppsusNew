@@ -1,14 +1,11 @@
 import { noteService } from "../services/note-service.js";
-// import { eventBus } from '../services/eventBus-service.js';
 
 export default {
     template: `
     
         <section v-if="noteToEdit" class="note-edit app-main">
-            <!-- <h4>{{formTitle}}</h4> -->
             <form @submit.prevent="save">
                 <input type="text" v-model="noteToEdit.txt" placeholder="please edit your note">
-                <!-- <input type="number" v-model.number="noteToEdit.maxSpeed" placeholder="Max speed"> -->
                 <button>Save</button>
             </form>
         </section>
@@ -38,10 +35,5 @@ export default {
                 });
         }
     },
-    // computed: {
-    //     formTitle() {
-    //         const id = this.$route.params.noteId;
-    //         return id ? 'Edit car' : 'Add car';
-    //     }
-    // }
+  
 };

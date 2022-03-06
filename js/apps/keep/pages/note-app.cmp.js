@@ -19,7 +19,6 @@ export default {
     data() {
         return {
             notes: null,
-            // selectedBook: null,
             filterBy: null
         };
 
@@ -34,11 +33,9 @@ export default {
                 .then(() => {
                     const idx = this.notes.findIndex((note) => note.id === id);
                     this.notes.splice(idx, 1);
-                    // eventBus.emit('show-msg', { txt: 'Deleted succesfully', type: 'success' });
                 })
                 .catch(err => {
                     console.error(err);
-                    // eventBus.emit('show-msg', { txt: 'Error - please try again later', type: 'error' });
                 });
         },
         setFilter(filterBy) {

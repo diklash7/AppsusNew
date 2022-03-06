@@ -13,9 +13,12 @@ export default {
             <ul>
                 <li class="note-style"  v-for="note in notes"> 
                     <component :is="note.type" :note="note"> </component>
-                    <img src="../../../../img/bin.png" class="imgBtn" @click="remove(note.id)"> 
-                    <!-- <img class="imgBtn" src="../../../../img/copying.png" @click="duplicateNote()"> -->
-
+                     <img src="../../../../img/bin.png" class="imgBtn" @click="remove(note.id)"> 
+                     <img class="imgBtn" src="../../../../img/pin.png" @click="togglePin"> 
+                     <!-- <input type="color" :style="note.id.backgroundColor" class="btn-remove" v-model="note.id.backgroundColor" > -->
+                     <img class="imgBtn" src="../../../../img/edit.png">
+                     <img class="imgBtn" src="../../../../img/check-mark.png">
+                    
                  </li>
             </ul>
         </section>
@@ -41,6 +44,7 @@ export default {
         console.log('this.currNote:', this.currNote);
     },
     methods: {
+                 
         remove(id) {
             console.log(id)
             this.$emit('remove', id);
@@ -49,9 +53,7 @@ export default {
             noteService.save(this.currNote);
         },
 
-        duplicateNote(id) {
-            noteService.save(this.currNote)
-        },
+        
     },
 
 

@@ -8,7 +8,6 @@ export default {
 {{note.info.txt}}
 
 
-<!-- <input type="text" v-model="val" @change="reportVal"/> -->
 <img class="imgBtn" src="../../../../img/copying.png" @click="duplicateNote()">
 
 </label>

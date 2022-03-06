@@ -9,7 +9,7 @@ export default {
             <img  @click="setType('note-txt')" class="fa fa-image" src="../../../../../img/text.png">
             <i><img   @click="setType('note-video')"   class="fa fa-image" src="../../../../../img/video-camera.png"></i>
             <i><img @click="setType('note-list')"   class="fa fa-image" src="../../../../../img/menu.png"></i>
-            <i> <img  @click="onSaveNote" class="fa fa-image" src="../../../../../img/menu.png"></i>
+            <i> <img  @click="onSaveNote" class="fa fa-image" src="../../../../../img/add.png"></i>
     </section>
     `,
     data() {
